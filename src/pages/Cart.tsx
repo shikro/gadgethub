@@ -1,4 +1,3 @@
-import React from 'react';
 import { Trash2 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
@@ -7,9 +6,9 @@ export function Cart() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h1 className="text-3xl font-bold text-gray-900 mb-8">Shopping Cart</h1>
+      <h1 className="text-3xl font-bold text-gray-900 mb-8">Корзина</h1>
       {items.length === 0 ? (
-        <p className="text-gray-500 text-center">Your cart is empty</p>
+        <p className="text-gray-500 text-center">Ваша корзина пуста</p>
       ) : (
         <div className="bg-white rounded-lg shadow-md p-6">
           <div className="space-y-4">
@@ -26,7 +25,7 @@ export function Cart() {
                   />
                   <div>
                     <h3 className="text-lg font-semibold">{item.name}</h3>
-                    <p className="text-gray-600">${item.price.toFixed(2)}</p>
+                    <p className="text-gray-600">{item.price.toFixed(2)}р</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
@@ -50,13 +49,13 @@ export function Cart() {
             ))}
           </div>
           <div className="mt-6 flex justify-between items-center">
-            <span className="text-lg font-semibold">Total:</span>
+            <span className="text-lg font-semibold">Стоимость заказа:</span>
             <span className="text-2xl font-bold text-indigo-600">
-              ${total.toFixed(2)}
+              {total.toFixed(2)}р
             </span>
           </div>
           <button className="mt-6 w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition-colors">
-            Proceed to Checkout
+            Оформить заказ
           </button>
         </div>
       )}

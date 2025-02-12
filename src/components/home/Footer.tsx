@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
+import { Facebook, Instagram, Twitter } from 'lucide-react';
 import { formatPhoneNumber } from '../../utils/format'; // Update import path
 
 const PHONE_NUMBER = '8001234567';

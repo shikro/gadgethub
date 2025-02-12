@@ -31,7 +31,7 @@ export function FilterPanel() {
           onClick={resetFilters}
           className="text-sm text-gray-500 hover:text-indigo-600 transition-colors"
         >
-          Reset All
+          Сбросить фильтры
         </button>
       </div>
 

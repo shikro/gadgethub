@@ -5,7 +5,6 @@ import { formatPrice } from '../../utils';
 import { ProductImage } from './ProductImage';
 import { ProductRating } from './ProductRating';
 import { ProductAvailability } from './ProductAvailability';
-import { WishlistButton } from './WishlistButton';
 import { ProductCardExpanded } from './ProductCardExpanded';
 
 interface ProductCardProps {
@@ -56,11 +55,6 @@ export function ProductCard({
             src={product.image}
             alt={product.name}
             isNew={isNew}
-          />
-          <WishlistButton
-            productId={product.id}
-            isWishlisted={false}
-            onToggle={() => {}}
           />
         </div>
 

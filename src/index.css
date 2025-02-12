@@ -1,5 +1,6 @@
+@import './styles/animations.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import './styles/animations.css';
+body {font-family: Rubik-Black;}

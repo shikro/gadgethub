@@ -1,4 +1,3 @@
-import React from 'react';
 import { PromoBanner } from '../components/home/PromoBanner';
 import { BestSellers } from '../components/home/BestSellers';
 import { NewArrivals } from '../components/home/NewArrivals';

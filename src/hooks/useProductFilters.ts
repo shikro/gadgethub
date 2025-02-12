@@ -6,7 +6,6 @@ const initialFilters: FilterState = {
   priceRange: { min: 0, max: 0 },
   colors: [],
   categories: [],
-  brands: [],
   inStock: false
 };
 
@@ -43,15 +42,10 @@ export function useProductFilters() {
         filters.categories.length === 0 ||
         filters.categories.includes(product.category);
 
-      // Brand filter
-      const brandMatch =
-        filters.brands.length === 0 ||
-        filters.brands.includes(product.brand);
-
       // Stock filter
       const stockMatch = !filters.inStock || product.stock > 0;
 
-      return priceInRange && colorMatch && categoryMatch && brandMatch && stockMatch;
+      return priceInRange && colorMatch && categoryMatch && stockMatch;
     });
   }, [filters]);
 

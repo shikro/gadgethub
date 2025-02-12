@@ -23,7 +23,7 @@ export function Products() {
             className={`p-2 rounded-md ${
               layout === 'grid' ? 'bg-indigo-100 text-indigo-600' : 'text-gray-500'
             }`}
-            aria-label="Grid view"
+            aria-label="Сетка"
           >
             <Grid className="h-5 w-5" />
           </button>
@@ -32,7 +32,7 @@ export function Products() {
             className={`p-2 rounded-md ${
               layout === 'list' ? 'bg-indigo-100 text-indigo-600' : 'text-gray-500'
             }`}
-            aria-label="List view"
+            aria-label="Список"
           >
             <List className="h-5 w-5" />
           </button>
