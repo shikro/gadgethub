@@ -1,19 +1,14 @@
-import React from 'react';
-import { Filter } from 'lucide-react';
-import { PriceRangeFilter } from './PriceRangeFilter';
-import { ColorFilter } from './ColorFilter';
-import { CategoryFilter } from './CategoryFilter';
-import { useProductFilters } from '../../../hooks/useProductFilters';
-import { FilterState } from '../../../types/filters';
+import React from "react";
+import { Filter } from "lucide-react";
+import { PriceRangeFilter } from "./PriceRangeFilter";
+import { ColorFilter } from "./ColorFilter";
+import { CategoryFilter } from "./CategoryFilter";
+import { useProductFilters } from "../../../hooks/useProductFilters";
+import { FilterState } from "../../../types/filters";
 
 export function FilterPanel() {
-  const {
-    filters,
-    setFilters,
-    resetFilters,
-    applyFilters,
-    isLoading
-  } = useProductFilters();
+  const { filters, setFilters, resetFilters, applyFilters, isLoading } =
+    useProductFilters();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -40,24 +35,22 @@ export function FilterPanel() {
           minPrice={filters.priceRange.min}
           maxPrice={filters.priceRange.max}
           onChange={(min, max) =>
-            setFilters(prev => ({
+            setFilters((prev) => ({
               ...prev,
-              priceRange: { min, max }
+              priceRange: { min, max },
             }))
           }
         />
 
         <ColorFilter
           selectedColors={filters.colors}
-          onChange={colors =>
-            setFilters(prev => ({ ...prev, colors }))
-          }
+          onChange={(colors) => setFilters((prev) => ({ ...prev, colors }))}
         />
 
         <CategoryFilter
           selectedCategories={filters.categories}
-          onChange={categories =>
-            setFilters(prev => ({ ...prev, categories }))
+          onChange={(categories) =>
+            setFilters((prev) => ({ ...prev, categories }))
           }
         />
 
@@ -66,7 +59,7 @@ export function FilterPanel() {
           disabled={isLoading}
           className="w-full py-2 px-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors disabled:bg-indigo-300 disabled:cursor-not-allowed"
         >
-          {isLoading ? 'Applying...' : 'Show Results'}
+          {isLoading ? "Applying..." : "Show Results"}
         </button>
       </form>
     </div>

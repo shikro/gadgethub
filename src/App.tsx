@@ -1,13 +1,13 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Navbar } from './components/layout/Navbar';
-import { Footer } from './components/layout/Footer';
-import { Home } from './pages/Home';
-import { Products } from './pages/Products';
-import { Cart } from './pages/Cart';
-import { Login } from './pages/Login';
-import { AuthProvider } from './context/AuthContext';
-import { CartProvider } from './context/CartContext';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Navbar } from "./components/layout/Navbar";
+import { Footer } from "./components/layout/Footer";
+import { Home } from "./pages/Home";
+import { Products } from "./pages/Products";
+import { Cart } from "./pages/Cart";
+import { Login } from "./pages/Login";
+import { AuthProvider } from "./context/AuthContext";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
   return (
@@ -32,4 +32,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

@@ -1,5 +1,5 @@
-import React from 'react';
-import { ImageOff } from 'lucide-react';
+import React from "react";
+import { ImageOff } from "lucide-react";
 
 interface ProductImageProps {
   src: string;
@@ -32,7 +32,7 @@ export function ProductImage({ src, alt, isNew }: ProductImageProps) {
             alt={alt}
             loading="lazy"
             className={`h-full w-full object-cover transition-opacity duration-300 ${
-              isLoading ? 'opacity-0' : 'opacity-100'
+              isLoading ? "opacity-0" : "opacity-100"
             }`}
             onLoad={() => setIsLoading(false)}
             onError={() => setError(true)}

@@ -1,5 +1,5 @@
-import React from 'react';
-import { productCategories } from '../../../data/filters';
+import React from "react";
+import { productCategories } from "../../../data/filters";
 
 interface CategoryFilterProps {
   selectedCategories: string[];
@@ -8,11 +8,11 @@ interface CategoryFilterProps {
 
 export function CategoryFilter({
   selectedCategories,
-  onChange
+  onChange,
 }: CategoryFilterProps) {
   const handleCategoryToggle = (category: string) => {
     const newCategories = selectedCategories.includes(category)
-      ? selectedCategories.filter(c => c !== category)
+      ? selectedCategories.filter((c) => c !== category)
       : [...selectedCategories, category];
     onChange(newCategories);
   };
@@ -21,7 +21,7 @@ export function CategoryFilter({
     <div className="space-y-2">
       <h3 className="font-medium text-gray-900">Categories</h3>
       <div className="space-y-1">
-        {productCategories.map(category => (
+        {productCategories.map((category) => (
           <label
             key={category.value}
             className="flex items-center gap-2 cursor-pointer"

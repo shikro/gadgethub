@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface PriceRangeFilterProps {
   minPrice: number;
@@ -9,7 +9,7 @@ interface PriceRangeFilterProps {
 export function PriceRangeFilter({
   minPrice,
   maxPrice,
-  onChange
+  onChange,
 }: PriceRangeFilterProps) {
   return (
     <div className="space-y-2">
@@ -20,8 +20,8 @@ export function PriceRangeFilter({
           <input
             type="number"
             min={0}
-            value={minPrice || ''}
-            onChange={e => onChange(Number(e.target.value), maxPrice)}
+            value={minPrice || ""}
+            onChange={(e) => onChange(Number(e.target.value), maxPrice)}
             className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-indigo-500"
           />
         </div>
@@ -30,8 +30,8 @@ export function PriceRangeFilter({
           <input
             type="number"
             min={minPrice}
-            value={maxPrice || ''}
-            onChange={e => onChange(minPrice, Number(e.target.value))}
+            value={maxPrice || ""}
+            onChange={(e) => onChange(minPrice, Number(e.target.value))}
             className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-indigo-500"
           />
         </div>

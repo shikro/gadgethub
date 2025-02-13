@@ -1,26 +1,29 @@
-import { CheckCircle, XCircle, Clock } from 'lucide-react';
+import { CheckCircle, XCircle, Clock } from "lucide-react";
 
 interface ProductAvailabilityProps {
-  status: 'in-stock' | 'out-of-stock' | 'low-stock';
+  status: "in-stock" | "out-of-stock" | "low-stock";
   quantity?: number;
 }
 
-export function ProductAvailability({ status, quantity }: ProductAvailabilityProps) {
+export function ProductAvailability({
+  status,
+  quantity,
+}: ProductAvailabilityProps) {
   const statusConfig = {
-    'in-stock': {
+    "in-stock": {
       Icon: CheckCircle,
-      text: 'In Stock',
-      color: 'text-green-600',
+      text: "In Stock",
+      color: "text-green-600",
     },
-    'out-of-stock': {
+    "out-of-stock": {
       Icon: XCircle,
-      text: 'Out of Stock',
-      color: 'text-red-600',
+      text: "Out of Stock",
+      color: "text-red-600",
     },
-    'low-stock': {
+    "low-stock": {
       Icon: Clock,
       text: `Only ${quantity} left`,
-      color: 'text-orange-600',
+      color: "text-orange-600",
     },
   };
 

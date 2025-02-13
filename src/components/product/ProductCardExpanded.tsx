@@ -1,11 +1,11 @@
-import React, { useRef, useEffect } from 'react';
-import { X } from 'lucide-react';
-import { Product } from '../../types';
-import { ProductDetails } from './ProductDetails';
-import { ProductActions } from './ProductActions';
-import { ProductImage } from './ProductImage';
-import { ProductRating } from './ProductRating';
-import { formatPrice } from '../../utils';
+import React, { useRef, useEffect } from "react";
+import { X } from "lucide-react";
+import { Product } from "../../types";
+import { ProductDetails } from "./ProductDetails";
+import { ProductActions } from "./ProductActions";
+import { ProductImage } from "./ProductImage";
+import { ProductRating } from "./ProductRating";
+import { formatPrice } from "../../utils";
 
 interface ProductCardExpandedProps {
   product: Product;
@@ -13,36 +13,40 @@ interface ProductCardExpandedProps {
   cardRect: DOMRect | null;
 }
 
-export function ProductCardExpanded({ product, onClose, cardRect }: ProductCardExpandedProps) {
+export function ProductCardExpanded({
+  product,
+  onClose,
+  cardRect,
+}: ProductCardExpandedProps) {
   const expandedRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function handleEscape(e: KeyboardEvent) {
-      if (e.key === 'Escape') onClose();
+      if (e.key === "Escape") onClose();
     }
-    window.addEventListener('keydown', handleEscape);
-    return () => window.removeEventListener('keydown', handleEscape);
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
   }, [onClose]);
 
   useEffect(() => {
     if (expandedRef.current && cardRect) {
       const { top, left, width, height } = cardRect;
       const expandedCard = expandedRef.current;
-      
+
       // Set initial position to match the original card
-      expandedCard.style.setProperty('--initial-top', `${top}px`);
-      expandedCard.style.setProperty('--initial-left', `${left}px`);
-      expandedCard.style.setProperty('--initial-width', `${width}px`);
-      expandedCard.style.setProperty('--initial-height', `${height}px`);
-      
+      expandedCard.style.setProperty("--initial-top", `${top}px`);
+      expandedCard.style.setProperty("--initial-left", `${left}px`);
+      expandedCard.style.setProperty("--initial-width", `${width}px`);
+      expandedCard.style.setProperty("--initial-height", `${height}px`);
+
       // Trigger the animation
-      expandedCard.classList.add('animate-expand');
+      expandedCard.classList.add("animate-expand");
     }
   }, [cardRect]);
 
   return (
     <>
-      <div 
+      <div
         className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 animate-fade-in"
         onClick={onClose}
       />
@@ -50,9 +54,9 @@ export function ProductCardExpanded({ product, onClose, cardRect }: ProductCardE
         ref={expandedRef}
         className="fixed bg-white rounded-lg shadow-xl z-50 overflow-hidden expanded-card"
         style={{
-          maxWidth: '90vw',
-          maxHeight: '90vh',
-          width: '800px',
+          maxWidth: "90vw",
+          maxHeight: "90vh",
+          width: "800px",
         }}
       >
         <button
@@ -76,7 +80,7 @@ export function ProductCardExpanded({ product, onClose, cardRect }: ProductCardE
             <h2 className="text-2xl font-bold text-gray-900 mb-2">
               {product.name}
             </h2>
-            
+
             <div className="flex items-center gap-4 mb-4">
               <ProductRating rating={product.rating} reviewCount={50} />
               <span className="text-2xl font-bold text-indigo-600">

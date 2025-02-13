@@ -1,5 +1,5 @@
-import React from 'react';
-import { Star } from 'lucide-react';
+import React from "react";
+import { Star } from "lucide-react";
 
 interface ProductRatingProps {
   rating: number;
@@ -15,8 +15,8 @@ export function ProductRating({ rating, reviewCount }: ProductRatingProps) {
             key={index}
             className={`h-4 w-4 ${
               index < Math.floor(rating)
-                ? 'text-yellow-400 fill-current'
-                : 'text-gray-300'
+                ? "text-yellow-400 fill-current"
+                : "text-gray-300"
             }`}
           />
         ))}
