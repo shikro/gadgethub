@@ -2,7 +2,7 @@ import { Trash2 } from "lucide-react";
 import { useCart } from "../context/CartContext";
 
 export function Cart() {
-  const { items, removeFromCart, updateQuantity, total } = useCart();
+  const { items, removeFromCart, updateQuantity, clearCart, total } = useCart();
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -54,7 +54,10 @@ export function Cart() {
               {total.toFixed(2)}р
             </span>
           </div>
-          <button className="mt-6 w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition-colors">
+          <button
+            onClick={() => clearCart()}
+            className="mt-6 w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition-colors"
+          >
             Оформить заказ
           </button>
         </div>
