@@ -1,5 +1,6 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, ReactNode } from "react";
 import { User } from "../types";
+import { useCart } from "./CartContext";
 
 interface AuthContextType {
   user: User | null;
@@ -10,6 +11,8 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
+  const { clearCart } = useCart();
+
   const [user, setUser] = useState<User | null>(null);
 
   const login = (email: string, password: string) => {
@@ -18,6 +21,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const logout = () => {
     setUser(null);
+    clearCart();
   };
 
   return (

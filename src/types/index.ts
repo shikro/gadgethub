@@ -13,3 +13,8 @@ export interface Product {
     quantity?: number;
   };
 }
+
+export interface User {
+  email: string;
+  password: string;
+}
