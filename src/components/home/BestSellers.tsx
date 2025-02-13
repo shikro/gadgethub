@@ -1,7 +1,7 @@
-import React from 'react';
-import { Star } from 'lucide-react';
-import { BestSeller } from '../../data/bestSellers';
-import { formatPrice } from '../../utils';
+import React from "react";
+import { Star } from "lucide-react";
+import { BestSeller } from "../../data/bestSellers";
+import { formatPrice } from "../../utils";
 
 interface BestSellersProps {
   products: BestSeller[];
@@ -29,7 +29,9 @@ export function BestSellers({ products }: BestSellersProps) {
                   {product.rating}
                 </span>
               </div>
-              <p className="mt-2 text-sm text-gray-600">{product.description}</p>
+              <p className="mt-2 text-sm text-gray-600">
+                {product.description}
+              </p>
               <div className="mt-4 flex items-center justify-between">
                 <span className="text-xl font-bold text-indigo-600">
                   {formatPrice(product.price)}

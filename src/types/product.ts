@@ -1,3 +1,14 @@
+export interface Promotion {
+  id: string;
+  title: string;
+  description: string;
+  originalPrice: number;
+  currentPrice: number;
+  validFrom: Date;
+  validUntil: Date;
+  image: string;
+}
+
 export interface ProductSpecification {
   name: string;
   value: string;

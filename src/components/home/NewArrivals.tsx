@@ -1,7 +1,7 @@
-import React from 'react';
-import { NewArrival } from '../../data/newArrivals';
-import { formatPrice, isNewArrival } from '../../utils';
-import { useCart } from '../../context/CartContext';
+import React from "react";
+import { NewArrival } from "../../data/newArrivals";
+import { formatPrice, isNewArrival } from "../../utils";
+import { useCart } from "../../context/CartContext";
 
 interface NewArrivalsProps {
   products: NewArrival[];
@@ -32,7 +32,9 @@ export function NewArrivals({ products }: NewArrivalsProps) {
               <h3 className="mt-4 text-lg font-semibold text-gray-900">
                 {product.name}
               </h3>
-              <p className="mt-2 text-sm text-gray-600">{product.description}</p>
+              <p className="mt-2 text-sm text-gray-600">
+                {product.description}
+              </p>
               <div className="mt-4 flex items-center justify-between">
                 <span className="text-xl font-bold text-indigo-600">
                   {formatPrice(product.price)}

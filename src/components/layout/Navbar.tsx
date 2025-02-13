@@ -36,7 +36,9 @@ export function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex items-center space-x-4">
             <Link to="/">
-              <span className="text-2xl font-bold text-blue-600">Gadget </span>
+              <span className="text-2xl font-bold text-indigo-600">
+                Gadget{" "}
+              </span>
               <span className="text-2xl font-bold text-black">Hub</span>
             </Link>
             <div className="hidden md:flex items-center space-x-2">

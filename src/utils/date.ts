@@ -1,5 +1,5 @@
 export function formatDate(date: Date): string {
-  return new Intl.DateTimeFormat('en-US', {
+  return new Intl.DateTimeFormat('ru-RU', {
     month: 'short',
     day: 'numeric',
     year: 'numeric'

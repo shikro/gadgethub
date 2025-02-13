@@ -1,5 +1,5 @@
-import React from 'react';
-import { StoreBenefit } from '../../data/storeBenefits';
+import React from "react";
+import { StoreBenefit } from "../../data/storeBenefits";
 
 interface StoreBenefitsProps {
   benefits: StoreBenefit[];
