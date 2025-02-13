@@ -12,17 +12,17 @@ export function ProductAvailability({
   const statusConfig = {
     "in-stock": {
       Icon: CheckCircle,
-      text: "In Stock",
+      text: "В наличии",
       color: "text-green-600",
     },
     "out-of-stock": {
       Icon: XCircle,
-      text: "Out of Stock",
+      text: "Нет в наличии",
       color: "text-red-600",
     },
     "low-stock": {
       Icon: Clock,
-      text: `Only ${quantity} left`,
+      text: `Осталось всего ${quantity}`,
       color: "text-orange-600",
     },
   };

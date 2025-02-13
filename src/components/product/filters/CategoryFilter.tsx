@@ -1,4 +1,3 @@
-import React from "react";
 import { productCategories } from "../../../data/filters";
 
 interface CategoryFilterProps {
@@ -19,7 +18,7 @@ export function CategoryFilter({
 
   return (
     <div className="space-y-2">
-      <h3 className="font-medium text-gray-900">Categories</h3>
+      <h3 className="font-medium text-gray-900">Категории</h3>
       <div className="space-y-1">
         {productCategories.map((category) => (
           <label
@@ -30,7 +29,7 @@ export function CategoryFilter({
               type="checkbox"
               checked={selectedCategories.includes(category.value)}
               onChange={() => handleCategoryToggle(category.value)}
-              className="w-4 h-4 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500"
+              className="w-4 h-4 text-indigo-600 rounded border-gray-300 focus:ring-indigo-600"
             />
             <span className="text-sm text-gray-700">{category.label}</span>
           </label>

@@ -1,8 +1,8 @@
 export function formatDate(date: Date): string {
-  return new Intl.DateTimeFormat('ru-RU', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric'
+  return new Intl.DateTimeFormat("ru-RU", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
   }).format(date);
 }
 

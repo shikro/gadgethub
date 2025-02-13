@@ -6,6 +6,7 @@ import { ProductImage } from "./ProductImage";
 import { ProductRating } from "./ProductRating";
 import { ProductAvailability } from "./ProductAvailability";
 import { ProductCardExpanded } from "./ProductCardExpanded";
+import { ProductActions } from "./ProductActions";
 
 interface ProductCardProps {
   product: Product;
@@ -62,9 +63,9 @@ export function ProductCard({
             <span className="text-xl font-bold text-indigo-600">
               {formatPrice(product.price)}
             </span>
-            {layout === "grid" && (
-              <ChevronDown className="h-5 w-5 text-gray-500" />
-            )}
+          </div>
+          <div className="mt-6">
+            <ProductActions product={product} expanded />
           </div>
         </div>
       </div>

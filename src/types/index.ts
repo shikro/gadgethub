@@ -9,7 +9,7 @@ export interface Product {
     [key: string]: string;
   };
   availability?: {
-    status: 'in-stock' | 'out-of-stock' | 'low-stock';
+    status: "in-stock" | "out-of-stock" | "low-stock";
     quantity?: number;
   };
 }

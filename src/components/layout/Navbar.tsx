@@ -6,7 +6,7 @@ import { useCart } from "../../context/CartContext";
 
 export function Navbar() {
   const { user, logout } = useAuth();
-  const { items } = useCart();
+  const { itemsQuantity } = useCart();
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
@@ -53,9 +53,9 @@ export function Navbar() {
             <NavLink to="/cart">
               <div className="relative">
                 <ShoppingCart className="h-6 w-6" />
-                {items.length > 0 && (
+                {itemsQuantity > 0 && (
                   <span className="absolute -top-2 -right-2 bg-indigo-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
-                    {items.length}
+                    {itemsQuantity}
                   </span>
                 )}
               </div>

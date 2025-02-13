@@ -1,4 +1,8 @@
-@import './styles/animations.css';
+@import "./styles/animations.css";
+
+@import "@splidejs/react-splide/css";
+@import "@splidejs/react-splide/css/core";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

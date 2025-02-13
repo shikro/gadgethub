@@ -16,7 +16,7 @@ export function ColorFilter({ selectedColors, onChange }: ColorFilterProps) {
 
   return (
     <div className="space-y-2">
-      <h3 className="font-medium text-gray-900">Colors</h3>
+      <h3 className="font-medium text-gray-900">Цвет</h3>
       <div className="flex flex-wrap gap-2">
         {productColors.map((color) => (
           <button

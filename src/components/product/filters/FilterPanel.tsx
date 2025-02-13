@@ -20,13 +20,13 @@ export function FilterPanel() {
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
           <Filter className="h-5 w-5" />
-          Filters
+          Фильтры
         </h2>
         <button
           onClick={resetFilters}
           className="text-sm text-gray-500 hover:text-indigo-600 transition-colors"
         >
-          Сбросить фильтры
+          Сбросить
         </button>
       </div>
 
@@ -59,7 +59,7 @@ export function FilterPanel() {
           disabled={isLoading}
           className="w-full py-2 px-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors disabled:bg-indigo-300 disabled:cursor-not-allowed"
         >
-          {isLoading ? "Applying..." : "Show Results"}
+          {isLoading ? "Загрузка..." : "Применить"}
         </button>
       </form>
     </div>

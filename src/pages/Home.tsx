@@ -10,6 +10,7 @@ import { storeBenefits } from "../data/storeBenefits";
 export function Home() {
   return (
     <div>
+      <div className="max-w-7xl py-1"></div>
       <PromoBanner promotions={promotions} />
       <BestSellers products={bestSellers} />
       <NewArrivals products={newArrivals} />

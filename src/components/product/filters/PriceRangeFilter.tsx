@@ -1,5 +1,3 @@
-import React from "react";
-
 interface PriceRangeFilterProps {
   minPrice: number;
   maxPrice: number;
@@ -13,10 +11,10 @@ export function PriceRangeFilter({
 }: PriceRangeFilterProps) {
   return (
     <div className="space-y-2">
-      <h3 className="font-medium text-gray-900">Price Range</h3>
+      <h3 className="font-medium text-gray-900">Цена, ₽</h3>
       <div className="flex gap-4">
         <div className="flex-1">
-          <label className="text-sm text-gray-600">From</label>
+          <label className="text-sm text-gray-600">От</label>
           <input
             type="number"
             min={0}
@@ -26,7 +24,7 @@ export function PriceRangeFilter({
           />
         </div>
         <div className="flex-1">
-          <label className="text-sm text-gray-600">To</label>
+          <label className="text-sm text-gray-600">До</label>
           <input
             type="number"
             min={minPrice}

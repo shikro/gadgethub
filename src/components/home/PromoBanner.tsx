@@ -7,7 +7,7 @@ interface PromoBannerProps {
 
 export function PromoBanner({ promotions }: PromoBannerProps) {
   return (
-    <div className="bg-indigo-600">
+    <div className="bg-indigo-600 rounded-lg ml-20 mr-20">
       <div className="max-w-7xl mx-auto py-3 px-4">
         <div className="text-center">
           <p className="text-white font-semibold text-lg mb-2">

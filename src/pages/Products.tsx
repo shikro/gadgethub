@@ -16,7 +16,7 @@ export function Products() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Latest Products</h1>
+        <h1 className="text-3xl font-bold text-gray-900">Каталог товаров</h1>
         <div className="flex gap-2">
           <button
             onClick={() => setLayout("grid")}
@@ -51,9 +51,7 @@ export function Products() {
         <div className="flex-1 lg:order-1">
           {filteredProducts.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-gray-500">
-                No products found matching your criteria
-              </p>
+              <p className="text-gray-500">Не найдено подходящих товаров</p>
             </div>
           ) : (
             <div

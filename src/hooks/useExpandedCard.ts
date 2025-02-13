@@ -5,12 +5,10 @@ export function useExpandedCard() {
 
   const handleExpand = useCallback((id: string) => {
     setExpandedCardId(id);
-    document.body.style.overflow = 'hidden';
   }, []);
 
   const handleCollapse = useCallback(() => {
     setExpandedCardId(null);
-    document.body.style.overflow = '';
   }, []);
 
   return {
