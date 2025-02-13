@@ -1,4 +1,3 @@
-import React from "react";
 import { StoreBenefit } from "../../data/storeBenefits";
 
 interface StoreBenefitsProps {

@@ -9,27 +9,27 @@ export interface StoreBenefit {
 
 export const storeBenefits: StoreBenefit[] = [
   {
-    id: 'benefit1',
-    title: 'Free Shipping',
-    description: 'On orders over $50',
+    id: '1',
+    title: 'Бесплатная доставка',
+    description: 'При заказе от 2000р',
     icon: Truck
   },
   {
-    id: 'benefit2',
-    title: 'Money-Back Guarantee',
-    description: '30-day return policy',
+    id: '2',
+    title: 'Можно вернуть',
+    description: 'Возврат в течении 30 дней',
     icon: Shield
   },
   {
-    id: 'benefit3',
-    title: 'Secure Payments',
-    description: 'SSL encrypted checkout',
+    id: '3',
+    title: 'Безопасная оплата',
+    description: 'Платежные данные под SSL',
     icon: CreditCard
   },
   {
-    id: 'benefit4',
-    title: '24/7 Support',
-    description: 'Round-the-clock assistance',
+    id: '4',
+    title: 'Поддержка 24/7',
+    description: 'Заботимся о Вас с 9 до 21',
     icon: Clock
   }
 ];
