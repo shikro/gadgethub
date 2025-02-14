@@ -18,4 +18,5 @@ export const productColors = [
   { value: "blue", label: "Blue", hex: "#0000FF" },
   { value: "red", label: "Red", hex: "#FF0000" },
   { value: "green", label: "Green", hex: "#008000" },
+  { value: "purple", label: "Purple", hex: "#A020F0" },
 ];

@@ -1,9 +1,12 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import { useExpandedCard } from "../../hooks/useExpandedCard";
 import { products } from "../../data/products";
 import { ProductCard } from "../product/ProductCard";
 
 export function BestSellers() {
+  const bestSellers = products.filter((product) => {
+    return product.isHit;
+  });
+
   return (
     <section className="py-12 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
@@ -12,17 +15,21 @@ export function BestSellers() {
           options={{
             type: "loop",
             perPage: 3,
+            perMove: 1,
             gap: "2rem",
             pagination: false,
             arrows: true,
           }}
         >
-          {products.map((product) => (
+          {bestSellers.map((product) => (
             <SplideSlide>
               <ProductCard
                 key={product.id}
                 product={product}
                 isExpanded={false}
+                onExpand={() => {}}
+                onCollapse={() => {}}
+                addToCartButton={false}
               />
             </SplideSlide>
           ))}

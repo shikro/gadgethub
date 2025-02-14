@@ -15,6 +15,7 @@ interface ProductCardProps {
   isExpanded: boolean;
   onExpand: (id: string) => void;
   onCollapse: () => void;
+  addToCartButton: boolean;
 }
 
 export function ProductCard({
@@ -24,6 +25,7 @@ export function ProductCard({
   isExpanded,
   onExpand,
   onCollapse,
+  addToCartButton = true,
 }: ProductCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [cardRect, setCardRect] = React.useState<DOMRect | null>(null);
@@ -50,7 +52,11 @@ export function ProductCard({
         aria-label={`Product details for ${product.name}`}
       >
         <div className={`relative ${layout === "grid" ? "w-full" : "w-1/3"}`}>
-          <ProductImage src={product.image} alt={product.name} isNew={isNew} />
+          <ProductImage
+            src={"http://localhost:8000/images/" + product.id}
+            alt={product.name}
+            isNew={isNew}
+          />
         </div>
 
         <div className={`${layout === "grid" ? "p-4" : "flex-1 p-4"}`}>
@@ -58,15 +64,20 @@ export function ProductCard({
             {product.name}
           </h3>
           <ProductRating rating={product.rating} reviewCount={50} />
-          <ProductAvailability status="in-stock" />
+          <ProductAvailability
+            status={product.availability.status}
+            quantity={product.availability.quantity}
+          />
           <div className="mt-2 flex items-center justify-between">
             <span className="text-xl font-bold text-indigo-600">
               {formatPrice(product.price)}
             </span>
           </div>
-          <div className="mt-6">
-            <ProductActions product={product} expanded />
-          </div>
+          {product.availability.quantity > 0 && addToCartButton && (
+            <div className="mt-5">
+              <ProductActions product={product} expanded />
+            </div>
+          )}
         </div>
       </div>
 

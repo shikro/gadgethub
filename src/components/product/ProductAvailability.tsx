@@ -2,7 +2,7 @@ import { CheckCircle, XCircle, Clock } from "lucide-react";
 
 interface ProductAvailabilityProps {
   status: "in-stock" | "out-of-stock" | "low-stock";
-  quantity?: number;
+  quantity: number;
 }
 
 export function ProductAvailability({

@@ -68,11 +68,10 @@ export function ProductCardExpanded({
         </button>
 
         <div className="grid grid-cols-2 h-full">
-          <div className="p-6 flex items-center justify-center bg-gray-50">
+          <div className="p-6 flex items-center justify-center bg-white">
             <ProductImage
-              src={product.image}
+              src={"http://localhost:8000/images/" + product.id}
               alt={product.name}
-              className="w-full h-full object-contain"
             />
           </div>
 
@@ -89,9 +88,11 @@ export function ProductCardExpanded({
             </div>
 
             <ProductDetails product={product} />
-            <div className="mt-6">
-              <ProductActions product={product} expanded />
-            </div>
+            {product.availability.quantity > 0 && (
+              <div className="mt-5">
+                <ProductActions product={product} expanded />
+              </div>
+            )}
           </div>
         </div>
       </div>

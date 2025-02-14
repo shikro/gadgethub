@@ -3,18 +3,19 @@ import { Filter } from "lucide-react";
 import { PriceRangeFilter } from "./PriceRangeFilter";
 import { ColorFilter } from "./ColorFilter";
 import { CategoryFilter } from "./CategoryFilter";
-import { useProductFilters } from "../../../hooks/useProductFilters";
 import { FilterState } from "../../../types/filters";
 
-export function FilterPanel() {
-  const { filters, setFilters, resetFilters, applyFilters, isLoading } =
-    useProductFilters();
+interface FilterPanelProps {
+  filters: FilterState;
+  setFilters: React.Dispatch<React.SetStateAction<FilterState>>;
+  resetFilters: () => void;
+}
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    applyFilters();
-  };
-
+export function FilterPanel({
+  filters,
+  setFilters,
+  resetFilters,
+}: FilterPanelProps) {
   return (
     <div className="w-full lg:w-72 bg-white rounded-lg shadow-md p-4">
       <div className="flex items-center justify-between mb-4">
@@ -30,7 +31,7 @@ export function FilterPanel() {
         </button>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form className="space-y-6">
         <PriceRangeFilter
           minPrice={filters.priceRange.min}
           maxPrice={filters.priceRange.max}
@@ -53,14 +54,6 @@ export function FilterPanel() {
             setFilters((prev) => ({ ...prev, categories }))
           }
         />
-
-        <button
-          type="submit"
-          disabled={isLoading}
-          className="w-full py-2 px-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors disabled:bg-indigo-300 disabled:cursor-not-allowed"
-        >
-          {isLoading ? "Загрузка..." : "Применить"}
-        </button>
       </form>
     </div>
   );

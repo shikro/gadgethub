@@ -4,14 +4,16 @@ export interface Product {
   description: string;
   price: number;
   rating: number;
-  image: string;
   characteristics: {
     [key: string]: string;
   };
-  availability?: {
+  availability: {
     status: "in-stock" | "out-of-stock" | "low-stock";
-    quantity?: number;
+    quantity: number;
   };
+  color: string;
+  category: string;
+  isHit: boolean;
 }
 
 export interface User {

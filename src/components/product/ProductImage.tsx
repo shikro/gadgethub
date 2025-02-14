@@ -12,7 +12,7 @@ export function ProductImage({ src, alt, isNew }: ProductImageProps) {
   const [error, setError] = React.useState(false);
 
   return (
-    <div className="relative aspect-square overflow-hidden rounded-t-lg bg-gray-100">
+    <div className="flex justify-center relative rounded-t-lg bg-white">
       {isNew && (
         <span className="absolute top-2 right-2 z-10 bg-green-500 px-2 py-1 rounded-full text-xs font-semibold text-white">
           New
@@ -31,7 +31,7 @@ export function ProductImage({ src, alt, isNew }: ProductImageProps) {
             src={src}
             alt={alt}
             loading="lazy"
-            className={`h-full w-full object-cover transition-opacity duration-300 ${
+            className={`h-auto w-auto object-cover transition-opacity duration-300 ${
               isLoading ? "opacity-0" : "opacity-100"
             }`}
             onLoad={() => setIsLoading(false)}

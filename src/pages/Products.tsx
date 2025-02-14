@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Grid, List } from "lucide-react";
 import { ProductCard } from "../components/product/ProductCard";
 import { FilterPanel } from "../components/product/filters/FilterPanel";
@@ -9,7 +9,8 @@ import { products } from "../data/products";
 export function Products() {
   const [layout, setLayout] = useState<"grid" | "list">("grid");
   const { expandedCardId, handleExpand, handleCollapse } = useExpandedCard();
-  const { filterProducts } = useProductFilters();
+  const { filters, setFilters, resetFilters, filterProducts } =
+    useProductFilters();
 
   const filteredProducts = filterProducts(products);
 
@@ -45,7 +46,11 @@ export function Products() {
 
       <div className="flex flex-col lg:flex-row gap-8">
         <div className="lg:order-2">
-          <FilterPanel />
+          <FilterPanel
+            filters={filters}
+            setFilters={setFilters}
+            resetFilters={resetFilters}
+          />
         </div>
 
         <div className="flex-1 lg:order-1">
@@ -69,6 +74,7 @@ export function Products() {
                   isExpanded={expandedCardId === product.id}
                   onExpand={handleExpand}
                   onCollapse={handleCollapse}
+                  addToCartButton={true}
                 />
               ))}
             </div>

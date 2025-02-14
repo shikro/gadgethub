@@ -4,6 +4,7 @@ import json
 import base64
 import os
 from starlette.middleware.sessions import SessionMiddleware
+from starlette.responses import FileResponse
 
 app = FastAPI()
 app.add_middleware(SessionMiddleware, secret_key="your_secret_key")
@@ -56,6 +57,13 @@ def get_goods():
         image_path = os.path.join(IMAGES_FOLDER, f"image_{item['id']}.png")
         item["image_data"] = encode_image(image_path)
     return goods
+
+@app.get("/images/{id}")
+def get_image(id: int):
+    image_path = os.path.join(IMAGES_FOLDER, f"image_{id}.png")
+    if not os.path.exists(image_path):
+        raise HTTPException(status_code=404, detail="Image not found")
+    return FileResponse(image_path)
 
 @app.post("/orders")
 def create_order(request: Request, order: dict):

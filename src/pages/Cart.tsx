@@ -1,5 +1,6 @@
 import { Trash2 } from "lucide-react";
 import { useCart } from "../context/CartContext";
+import { ProductImage } from "../components/product/ProductImage";
 
 export function Cart() {
   const { items, removeFromCart, updateQuantity, clearCart, total } = useCart();
@@ -18,10 +19,9 @@ export function Cart() {
                 className="flex items-center justify-between border-b pb-4"
               >
                 <div className="flex items-center space-x-4">
-                  <img
-                    src={item.image}
+                  <ProductImage
+                    src={"http://localhost:8000/images/" + item.id}
                     alt={item.name}
-                    className="w-16 h-16 object-cover rounded"
                   />
                   <div>
                     <h3 className="text-lg font-semibold">{item.name}</h3>

@@ -7,5 +7,4 @@ export interface FilterState {
   priceRange: PriceRange;
   colors: string[];
   categories: string[];
-  inStock: boolean;
 }
