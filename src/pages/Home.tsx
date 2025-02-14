@@ -3,7 +3,6 @@ import { BestSellers } from "../components/home/BestSellers";
 import { NewArrivals } from "../components/home/NewArrivals";
 import { StoreBenefits } from "../components/home/StoreBenefits";
 import { promotions } from "../data/promotions";
-import { newArrivals } from "../data/newArrivals";
 import { storeBenefits } from "../data/storeBenefits";
 
 export function Home() {
@@ -12,7 +11,7 @@ export function Home() {
       <div className="max-w-7xl py-1"></div>
       <PromoBanner promotions={promotions} />
       <BestSellers />
-      <NewArrivals products={newArrivals} />
+      <NewArrivals />
       <StoreBenefits benefits={storeBenefits} />
     </div>
   );

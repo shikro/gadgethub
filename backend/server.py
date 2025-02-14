@@ -5,9 +5,20 @@ import base64
 import os
 from starlette.middleware.sessions import SessionMiddleware
 from starlette.responses import FileResponse
+from starlette.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 app.add_middleware(SessionMiddleware, secret_key="your_secret_key")
+
+# Enable CORS for all origins
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
@@ -53,10 +64,7 @@ def logout(request: Request):
 @app.get("/goods")
 def get_goods():
     goods = read_json(GOODS_FILE)
-    for item in goods:
-        image_path = os.path.join(IMAGES_FOLDER, f"image_{item['id']}.png")
-        item["image_data"] = encode_image(image_path)
-    return goods
+    return JSONResponse(goods)
 
 @app.get("/images/{id}")
 def get_image(id: int):

@@ -5,7 +5,6 @@
     "description": "Мощный и компактный внешний аккумулятор с емкостью 10000mAh.",
     "price": 1990,
     "rating": 4.5,
-    "image": "http://localhost:8000/images/1",
     "characteristics": {
       "Емкость": "10000mAh",
       "Разъемы": "USB Type-C, USB-A",
@@ -16,7 +15,8 @@
       "quantity": 35
     },
     "color": "white",
-    "category": "accessory"
+    "category": "accessory",
+    "isHit": true
   },
   {
     "id": "2",
@@ -24,7 +24,6 @@
     "description": "Стильный черный внешний аккумулятор с высокой емкостью и быстрой зарядкой.",
     "price": 1990,
     "rating": 4.7,
-    "image": "battery_black.jpg",
     "characteristics": {
       "Емкость": "10000mAh",
       "Разъемы": "USB Type-C, USB-A",
@@ -35,7 +34,8 @@
       "quantity": 8
     },
     "color": "black",
-    "category": "accessory"
+    "category": "accessory",
+    "isHit": true
   },
   {
     "id": "3",
@@ -43,7 +43,6 @@
     "description": "Беспроводная гарнитура с шумоподавлением и удобной посадкой.",
     "price": 2990,
     "rating": 4.2,
-    "image": "bluetooth_headset_black.jpg",
     "characteristics": {
       "Время работы": "до 10 часов",
       "Тип": "внутриканальные",
@@ -54,7 +53,8 @@
       "quantity": 20
     },
     "color": "black",
-    "category": "headphones"
+    "category": "headphones",
+    "isHit": true
   },
   {
     "id": "4",
@@ -62,7 +62,6 @@
     "description": "Эргономичная Bluetooth-гарнитура с длительным временем работы.",
     "price": 2990,
     "rating": 4.3,
-    "image": "bluetooth_headset_gray.jpg",
     "characteristics": {
       "Время работы": "до 12 часов",
       "Тип": "внутриканальные",
@@ -73,7 +72,8 @@
       "quantity": 15
     },
     "color": "gray",
-    "category": "headphones"
+    "category": "headphones",
+    "isHit": true
   },
   {
     "id": "5",
@@ -81,7 +81,6 @@
     "description": "Компактная беспроводная акустика с мощным звуком.",
     "price": 4990,
     "rating": 4.6,
-    "image": "wireless_speaker.jpg",
     "characteristics": {
       "Мощность": "20W",
       "Время работы": "до 12 часов",
@@ -92,7 +91,8 @@
       "quantity": 25
     },
     "color": "black",
-    "category": "speaker"
+    "category": "speaker",
+    "isHit": false
   },
   {
     "id": "6",
@@ -100,7 +100,6 @@
     "description": "Современный смартфон с 256 ГБ памяти и мощным процессором.",
     "price": 59990,
     "rating": 4.8,
-    "image": "smartphone_purple.jpg",
     "characteristics": {
       "Экран": "6.5 дюймов OLED",
       "Память": "256 ГБ",
@@ -111,7 +110,8 @@
       "quantity": 10
     },
     "color": "purple",
-    "category": "smartphone"
+    "category": "smartphone",
+    "isHit": false
   },
   {
     "id": "7",
@@ -119,7 +119,6 @@
     "description": "Флагманский смартфон с большим объемом памяти и мощной камерой.",
     "price": 59990,
     "rating": 4.9,
-    "image": "smartphone_black.jpg",
     "characteristics": {
       "Экран": "6.5 дюймов OLED",
       "Память": "256 ГБ",
@@ -130,6 +129,7 @@
       "quantity": 12
     },
     "color": "black",
-    "category": "smartphone"
+    "category": "smartphone",
+    "isHit": false
   }
 ]
