@@ -5,6 +5,21 @@ import { ProductImage } from "../components/product/ProductImage";
 export function Cart() {
   const { items, removeFromCart, updateQuantity, clearCart, total } = useCart();
 
+  const handleSubmit = async () => {
+    fetch("http://127.0.0.1:8000/orders", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+      body: JSON.stringify({
+        id: 1,
+        items: { items },
+      }),
+    });
+    clearCart();
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <h1 className="text-3xl font-bold text-gray-900 mb-8">Корзина</h1>
@@ -55,7 +70,7 @@ export function Cart() {
             </span>
           </div>
           <button
-            onClick={() => clearCart()}
+            onClick={() => handleSubmit()}
             className="mt-6 w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition-colors"
           >
             Оформить заказ

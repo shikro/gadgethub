@@ -23,7 +23,7 @@ app.add_middleware(
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
 # Dummy user credentials
-USER_CREDENTIALS = {"username": "admin", "password": "password"}
+USER_CREDENTIALS = {"username": "111romashka@gmail.com", "password": "123"}
 
 # Paths for data storage
 GOODS_FILE = "goods.json"
@@ -75,11 +75,6 @@ def get_image(id: int):
 
 @app.post("/orders")
 def create_order(request: Request, order: dict):
-    user = request.session.get("user")
-    if not user:
-        raise HTTPException(status_code=401, detail="User not logged in")
-    
-    order["user"] = user
     orders = read_json(ORDERS_FILE)
     orders.append(order)
     write_json(ORDERS_FILE, orders)

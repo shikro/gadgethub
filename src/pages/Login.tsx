@@ -8,9 +8,12 @@ export function Login() {
   const { login } = useAuth();
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    login(email, password);
+    if (!(await login(email, password))) {
+      alert("Неверный логин и/или пароль");
+      return;
+    }
     navigate("/");
   };
 
